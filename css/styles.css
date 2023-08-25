@@ -105,8 +105,12 @@ img {
 }
 
 .menu,
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
 .nav-menu,
-.navigation,
 .contacts-menu {
   display: none;
 
@@ -180,6 +184,7 @@ img {
 .contacts-menu .contact:focus {
   color: var(--iris);
 }
+
 /* Section 1 */
 .hero {
   padding-top: 200px;
@@ -194,6 +199,10 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  /* @media screen and (min-width: 768px) {
+    background-image: unset;
+  } */
 }
 
 .hero-title {
@@ -247,31 +256,49 @@ img {
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
+
+  @media screen and (min-width: 1158px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .benefits .item {
-  flex-basis: calc(100% / 4 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: calc((100% - 45px) / 4);
+  }
 }
 
 .icon {
-  width: 264px;
-  height: 112px;
-  border-radius: 4px;
-  background: var(--cloud);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 8px;
+  display: none;
+
+  @media screen and (min-width: 1158px) {
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+    background: var(--cloud);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+  }
 }
 
 .benefits .title {
   color: var(--navyblue);
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.14;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 1158px) {
+    font-size: 20px;
+  }
 }
 
 .benefits .description {
@@ -292,20 +319,32 @@ img {
 
 /* Section 3*/
 .section.no-top-padding {
-  padding-top: 0;
+  display: none;
+
+  @media screen and (min-width: 1158px) {
+    padding-top: 0;
+  }
 }
 
 .what-we-do {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  display: none;
+
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 
 .what-we-do .item {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
+  display: none;
+
+  @media screen and (min-width: 1158px) {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
 }
 
 /* Section 4 */
@@ -388,11 +427,24 @@ img {
 .partners {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 1158px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .partners .item {
-  width: calc((100% - 150px) / 6);
+  width: calc((100% - 30px) / 2);
   height: 90px;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: calc((100% - 150px) / 6);
+  }
 }
 
 .customer-link {
@@ -670,10 +722,16 @@ img {
   left: 50%;
   min-width: 408px;
   min-height: 584px;
+
+  height: 100vh;
   background-color: var(--dairy);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 428px) {
+    height: auto;
+  }
 }
 
 .modal-title {
