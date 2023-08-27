@@ -63,16 +63,17 @@
         </ul>
 
         <!-- Mobile Menu -->
-
-        <button
-          class="menu-toggle js-open-menu"
-          aria-expmediaanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg class="hamburger-menu-icon" width="32" height="22">
-            <use href="./images/icons.svg#hamburger-icon"></use>
-          </svg>
-        </button>
+        <div class="hamburger-container">
+          <button
+            class="menu-toggle js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg class="hamburger-menu-icon" width="32" height="22">
+              <use href="./images/icons.svg#hamburger-icon"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -654,6 +655,99 @@
       </div>
     </div>
 
+    <!-- Mobile Menu -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg class="close-icon" width="11" height="11">
+          <use href="./images/icons.svg#close-icon"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu list">
+        <li class="mobile-menu-item">
+          <a href="./index.html" class="mobile-menu-link link">Studio</a>
+        </li>
+
+        <li class="mobile-menu-item">
+          <a href="./portfolio.html" class="mobile-menu-link link">Portfolio</a>
+        </li>
+
+        <li class="mobile-menu-item">
+          <a href="" class="mobile-menu-link link">Contacts</a>
+        </li>
+
+        <ul class="mobile-contact-link list">
+          <li class="mobile-contact-item">
+            <a href="tel:+110001111111" class="hamburger-contact-link link"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+          <li class="mobile-contact-item">
+            <a
+              href="mailto:info@devstudio.com"
+              class="hamburger-contact-link email-link link"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+
+        <ul class="mobile-menu-social-list list">
+          <li class="mobile-social-item">
+            <a
+              class="link"
+              href="http://instagram.com"
+              target="_blank"
+              rel="nopener noreferrer"
+              aria-label="Link to Instagram"
+            >
+              <svg class="footer-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-social-item">
+            <a
+              class="link"
+              href="http://twitter.com"
+              target="_blank"
+              rel="nopener noreferrer"
+              aria-label="Link to Twitter"
+            >
+              <svg class="footer-social-icon" width="20" height="20">
+                <use href="./images/icons.svg#twitter-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-social-item">
+            <a
+              class="link"
+              href="http://facebook.com"
+              target="_blank"
+              rel="nopener noreferrer"
+              aria-label="Link to Facebook"
+            >
+              <svg class="footer-social-icon" width="20" height="20">
+                <use href="./images/icons.svg#facebook.icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-social-item">
+            <a
+              class="link"
+              href="http://linkedin.com"
+              target="_blank"
+              rel="nopener noreferrer"
+              aria-label="Link to LinkedIn"
+            >
+              <svg class="footer-social-icon" width="20" height="20">
+                <use href="./images/icons.svg#linkedin-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </div>
+
     <!-- AOS SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -664,5 +758,14 @@
 
     <!-- MODAL SCRIPT -->
     <script src="./js/modal.js"></script>
+
+    <!-- Mobile Menu -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>
