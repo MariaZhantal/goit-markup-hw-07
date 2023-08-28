@@ -64,6 +64,9 @@ img {
   padding-right: 16px;
   margin: 0 auto;
 
+  @media screen and (min-width: 428px) {
+    width: 428px;
+  }
   @media screen and (min-width: 768px) {
     width: 768px;
   }
@@ -77,7 +80,9 @@ img {
     display: none;
   }
 }
-
+.container.menu {
+  padding: 0 16px;
+}
 /* Header */
 .page-header {
   border-bottom: 1px solid var(--cornflower);
@@ -110,7 +115,7 @@ img {
 }
 
 .menu {
-  padding: 24px;
+  height: 70px;
 
   @media screen and (min-width: 768px) {
     padding: 0;
@@ -146,8 +151,8 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   display: block;
-  padding-top: 32px;
-  padding-bottom: 31px;
+  padding-top: 24px;
+  padding-bottom: 30px;
   transition: color 250ms ease-in-out;
 }
 
@@ -184,7 +189,7 @@ img {
 
 .contacts-menu {
   margin-left: auto;
-  gap: 40px;
+  gap: 12px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -220,19 +225,26 @@ img {
   color: var(--iris);
 }
 
-/*Hamburger Scetion  */
+/*Hamburger Mobile Scetion  */
 .menu-toggle {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 8px;
+
+  margin-left: auto;
+  /* margin: 0; */
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
   border-radius: 50%;
   border: none;
   outline: none;
+  color: var(--navyblue);
+}
+
+.hamburger-menu-icon {
+  fill: currentColor;
 }
 
 .menu-toggle:hover,
@@ -240,20 +252,22 @@ img {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/*  Mobile Menu  */
 .menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 40px;
+  padding: 80px 0 40px 40px;
   background-color: var(--white);
-  z-index: 999;
+  z-index: 200;
 
   transform: translateX(100%);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-container.is-open {
@@ -281,6 +295,127 @@ img {
   .menu-toggle {
     display: none;
   }
+}
+
+.hamburger-container {
+  margin-left: auto;
+}
+
+/* Mobile Menu */
+
+.mobile-menu.list {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.mobile-menu-link {
+  display: block;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 111.111% */
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  color: var(--navyblue, #2e2f42);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: var(--iris);
+}
+
+.mobile-menu-link:hover::after,
+.mobile-menu-link:focus::after {
+  width: 100%;
+  background-color: var(--ocean);
+}
+
+.mobile-menu-item {
+  margin: 0;
+}
+
+.mobile-container-footer {
+  padding-top: 200px;
+}
+
+.hamburger-contact-link {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.72px;
+  line-height: 1.5;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-contact-link:focus {
+  color: var(--ocean);
+}
+
+.mobile-contact-link:hover,
+.mobile-contact-link:focus {
+  color: var(--iris);
+}
+
+.mobile-contact-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.hamburger-email-link {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--slate);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-email-link:focus {
+  color: var(--iris);
+}
+
+.mobile-menu-social-list {
+  display: inline-flex;
+  align-items: flex-start;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+.mobile-social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-social-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--iris);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+
+  transition: background-color 250ms ease-in-out;
+}
+
+.mobile-social-icon {
+  display: block;
+  gap: 56px;
+  fill: currentColor;
+}
+
+.mobile-social-item a:hover,
+.mobile-social-item a:focus {
+  background-color: var(--green);
 }
 
 /* Section 1 */
@@ -327,7 +462,7 @@ img {
   font-size: 36px;
   line-height: 1.07;
   letter-spacing: 0.04em;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 
   @media screen and (min-width: 768px) {
     font-size: 56px;
@@ -393,9 +528,13 @@ img {
 .benefits .title {
   color: var(--navyblue);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.14;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 
   @media screen and (min-width: 1158px) {
     font-size: 20px;
@@ -405,7 +544,7 @@ img {
 .benefits .description {
   color: var(--slate);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.71;
   text-align: left;
 }
@@ -641,7 +780,12 @@ img {
 
   @media screen and (min-width: 768px) {
     width: 100%;
-    padding-top: 97.5px;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 100%;
+    padding-top: 100px;
   }
 }
 
@@ -897,7 +1041,7 @@ img {
 
 .substrate {
   background-color: var(--white);
-  padding: 20px 24px;
+  padding: 32px 16px;
   border: 1px solid #eeeeee;
   border-top: 0;
 }
@@ -937,14 +1081,13 @@ img {
 }
 
 .modal {
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 16px 24px;
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 408px;
-  min-height: 584px;
-
+  width: 392px;
   height: 100vh;
+
   background-color: var(--dairy);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
@@ -969,7 +1112,8 @@ img {
   transform: translate(-50%, -50%) scale(0);
 }
 
-.modal-close {
+.modal-close,
+.js-close-menu {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -989,7 +1133,9 @@ img {
 }
 
 .modal-close:hover,
-.modal-close:focus {
+.modal-close:focus,
+.js-close-menu:hover,
+.js-close-menu:focus {
   color: var(--cloud);
   background-color: var(--ocean);
 }
@@ -1140,84 +1286,15 @@ img {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Mobile Menu */
-.mobile-menu-link {
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.72px;
-  text-transform: capitalize;
-  line-height: 1.5;
-  color: var(--navyblue);
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-menu-link:focus {
-  color: var(--iris);
-}
-
-.mobile-menu-item:not(:last-child) {
-  margin-bottom: 40px;
-}
-
-.hamburger-contact-link {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 0.72px;
-  line-height: 1.5;
-  color: var(--iris);
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hamburger-contact-link:focus {
-  color: var(--ocean);
-}
-
-.mobile-contact-link {
-  margin-top: 284px;
-}
-
-.mobile-contact-item:not(:last-child) {
-  margin-bottom: 40px;
-}
-
-.email-link {
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.4px;
-  color: var(--slate);
-
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.email-link:focus {
-  color: var(--iris);
-}
-
-.mobile-menu-social-list {
-  display: flex;
-  margin-top: 48px;
-  flex-wrap: wrap;
-}
-
-.mobile-social-item a {
+/* .mobile-social-item a {
   margin-bottom: 40px;
 }
 
 .mobile-social-item:not(:last-child) {
   margin-right: 56px;
-}
+} */
 
-.mobile-social-item a {
+/* .mobile-social-item a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1229,9 +1306,4 @@ img {
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-social-item a:hover,
-.mobile-social-item a:focus {
-  background-color: var(--green);
-}
+} */
