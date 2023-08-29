@@ -215,6 +215,11 @@ img {
   color: var(--slate);
   line-height: 1.14;
   letter-spacing: 0.02em;
+  font-size: 12px;
+
+  @media screen and (min-width: 1158px) {
+    font-size: 16px;
+  }
 }
 
 .nav-menu .page:hover,
@@ -541,6 +546,7 @@ img {
   }
 
   @media screen and (min-width: 1158px) {
+    font-weight: 500;
     font-size: 20px;
   }
 }
@@ -551,6 +557,10 @@ img {
   font-weight: 500;
   line-height: 1.71;
   text-align: left;
+
+  @media screen and (min-width: 1158px) {
+    font-weight: 400;
+  }
 }
 
 .benefits .description br {
